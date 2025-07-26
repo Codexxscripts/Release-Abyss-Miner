@@ -105,7 +105,7 @@ while task.wait(0.1) do
     for _, stone in pairs(Layer1:GetChildren()) do
         if stone:FindFirstChild("Amount") then
             for _ = 1, 30 do
-                HitBox:FireServer(5, "Standard", false, "Iron Pickaxe", 1)
+                HitBox:FireServer(10, "Standard", false, "Iron Pickaxe", 1)
                 task.wait(0.03)
             end
         end
