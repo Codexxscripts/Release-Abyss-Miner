@@ -61,8 +61,8 @@ print("Work Script")
 end)
 
 Tabs.Main:AddParagraph({
-        Title = "Status:",
-        Content = "Work Auto mine,Auto Sell\nSecond line!"
+        Title = "Work Auto mine,Auto Sell\nSecond line!",
+        Content = "Working All Execute"
     })
 
 Tabs.Main:AddButton({
@@ -91,7 +91,7 @@ while task.wait(0.1) do
 end
 end})
 
-local Toggle = Tabs.Player:AddToggle("Speed Walk", {Title = "", Default = false })
+local Toggle = Tabs.Player:AddToggle("Speed Walk", {Title = "Speed Player", Default = false })
 
     Toggle:OnChanged(function()
 speedEnabled = Value
@@ -104,16 +104,17 @@ speedEnabled = Value
 end)
 
 
-
-local Input = Tabs.Player:AddInput("Sent Speed", {
-        Title = "...",
+local Input = Tabs.Player:AddInput("Speed Walk", {
+        Title = "Speed Walk",
         Default = "Default",
         Placeholder = "Placeholder",
         Numeric = false, -- Only allows numbers
         Finished = false, -- Only calls callback when you press enter
         Callback = function(Value)
 
-            local speedValue = tonumber(Value)
+
+    Input:OnChanged(function()
+        local speedValue = tonumber(Value)
         if not speedValue then
             error("error. Please enter a number to change the speed.")
         end
@@ -125,10 +126,5 @@ local Input = Tabs.Player:AddInput("Sent Speed", {
                 humanoid.WalkSpeed = customSpeed
             end
         end
-        end
-    })
-
-    Input:OnChanged(function()
-        print("Input updated:", Input.Value)
     end)
 end
