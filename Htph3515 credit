@@ -112,5 +112,11 @@ Tabs.Main:AddParagraph({
 local Toggle = Tabs.Player:AddToggle("", {Title = "", Default = false })
 
     Toggle:OnChanged(function()
-
+speedEnabled = Value
+    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = Value and customSpeed or 16
+    else
+        error("Humanoid not found.")
+    end
 end)
