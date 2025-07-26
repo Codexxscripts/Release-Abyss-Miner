@@ -54,7 +54,7 @@ local Options = Fluent.Options
     })
 
 
-local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "This is Toggle", Default = true })
+local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "Auto Sell", Default = true })
 
     Toggle:OnChanged(function()
 print("Work Script")
@@ -62,12 +62,12 @@ end)
 
 Tabs.Main:AddParagraph({
         Title = "Work Auto mine,Auto Sell\nSecond line!",
-        Content = "Working All Execute"
+        Content = ""
     })
 
 Tabs.Main:AddButton({
         Title = "Rusty Pickaxe",
-        Description = "Auto Mine",
+        Description = "You should have it in your hands",
         Callback = function()
 
 local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
@@ -90,6 +90,38 @@ while task.wait(0.1) do
     end
 end
 end})
+
+Tabs.Main:AddButton({
+        Title = "Iron Pickaxe",
+        Description = "You should have it in your hands",
+        Callback = function()
+
+local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
+local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
+local Layer1 = workspace.Map["Layer 1"]
+local NPC = Layer1.Npcs["Rei ' The professer"]
+
+while task.wait(0.1) do
+    for _, stone in pairs(Layer1:GetChildren()) do
+        if stone:FindFirstChild("Amount") then
+            for _ = 1, 30 do
+                HitBox:FireServer(5, "Standard", false, "Iron Pickaxe", 1)
+                task.wait(0.03)
+            end
+        end
+    end
+    if NPC and NPC:FindFirstChild("Rei") then
+
+        SellAll:FireServer(NPC.Rei, NPC.Rei.HumanoidRootPart.Dialogue)
+    end
+end
+end})
+
+Tabs.Main:AddParagraph({
+        Title = "Work Auto mine,Auto Sell\nSecond line!",
+        Content = ""
+    })
+
 
 local Slider = Tabs.Player:AddSlider("Walk Speed", {
         Title = "Walk Speed",
