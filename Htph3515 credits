@@ -53,10 +53,6 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
--- delete
-
-
--- delete
 
 local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "This is Toggle", Default = true })
 
@@ -69,6 +65,14 @@ Tabs.Main:AddParagraph({
         Content = "Work Auto mine,Auto Sell\nSecond line!"
     })
 
+Tabs.Sniper:AddButton({
+        Title = "Rusty Pickaxe",
+        Description = "Auto Mine",
+        Callback = function()
+
+
+
+end
 
 local Toggle = Tabs.Player:AddToggle("Speed Walk", {Title = "", Default = false })
 
