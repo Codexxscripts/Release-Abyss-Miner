@@ -203,11 +203,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(222.2737
 end})
 
 Tabs.Visual:AddParagraph({
-        Title = "Soon...",
+        Title = "",
         Content = ""
     })
 
-Tabs.Teleport:AddButton({
+Tabs.Visual:AddButton({
         Title = "Esp Players",
         Description = "",
         Callback = function()
@@ -216,7 +216,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/
 
 end})
 
-Tabs.Teleport:AddButton({
+Tabs.Visual:AddButton({
         Title = "Esp Npc",
         Description = "",
         Callback = function()
