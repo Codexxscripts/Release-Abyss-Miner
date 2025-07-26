@@ -131,7 +131,7 @@ local Input = Tabs.Player:AddInput("Sent Speed", {
 
             local speedValue = tonumber(Value)
         if not speedValue then
-            error("ошибка. Пожалуйства введите цыфру что бы изменить скорость.")
+            error("error. Please enter a number to change the speed.")
         end
         customSpeed = speedValue
 
