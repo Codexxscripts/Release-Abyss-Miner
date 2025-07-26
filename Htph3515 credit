@@ -128,7 +128,19 @@ local Input = Tabs.Player:AddInput("Sent Speed", {
         Numeric = false, -- Only allows numbers
         Finished = false, -- Only calls callback when you press enter
         Callback = function(Value)
-            print("Input changed:", Value)
+
+            local speedValue = tonumber(Value)
+        if not speedValue then
+            error("ошибка. Пожалуйства введите цыфру что бы изменить скорость.")
+        end
+        customSpeed = speedValue
+
+        if speedEnabled then
+            local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid.WalkSpeed = customSpeed
+            end
+        end
         end
     })
 
