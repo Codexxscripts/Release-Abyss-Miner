@@ -203,7 +203,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(222.2737
 end})
 
 Tabs.Visual:AddParagraph({
-        Title = "",
+        Title = "This menu includes esp",
         Content = ""
     })
 
