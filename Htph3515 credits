@@ -53,29 +53,6 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
-local Toggle = Tabs.Main:AddToggle("Auto Mine", {Title = "This is Toggle", Default = true })
-
-    Toggle:OnChanged(function()
-
-local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
-local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
-local Layer1 = workspace.Map["Layer 1"]
-local NPC = Layer1.Npcs["Rei ' The professer"]
-
-while task.wait(0.1) do
-    for _, stone in pairs(Layer1:GetChildren()) do
-        if stone:FindFirstChild("Amount") then
-            for _ = 1, 30 do
-                HitBox:FireServer(5, "Standard", false, "Iron Pickaxe", 1)
-                task.wait(0.03)
-            end
-        end
-    end
-    if NPC and NPC:FindFirstChild("Rei") then
-        SellAll:FireServer(NPC.Rei, NPC.Rei.HumanoidRootPart.Dialogue)
-    end
-end
-    end)
 -- delete
 
 local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
@@ -118,6 +95,32 @@ end
     end)
 
 
+MultiDropdown:OnChanged(function(Value)
+        local Values = {}
+        for Value, State in next, Value do
+            table.insert(Iron Pickaxe, Value)
+        end
+
+local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
+local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
+local Layer1 = workspace.Map["Layer 1"]
+local NPC = Layer1.Npcs["Rei ' The professer"]
+
+while task.wait(0.1) do
+    for _, stone in pairs(Layer1:GetChildren()) do
+        if stone:FindFirstChild("Amount") then
+            for _ = 1, 30 do
+                HitBox:FireServer(5, "Standard", false, "Iron Pickaxe", 1)
+                task.wait(0.03)
+            end
+        end
+    end
+    if NPC and NPC:FindFirstChild("Rei") then
+        SellAll:FireServer(NPC.Rei, NPC.Rei.HumanoidRootPart.Dialogue)
+    end
+end
+  end)
+
 -- delete
 
 local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "This is Toggle", Default = true })
@@ -143,6 +146,8 @@ speedEnabled = Value
         error("Humanoid not found.")
     end
 end)
+
+
 
 local Input = Tabs.Player:AddInput("Sent Speed", {
         Title = "...",
