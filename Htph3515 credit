@@ -102,3 +102,7 @@ local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "This is Toggle", Defau
 print("Work Script")
 end)
 
+Tabs.Main:AddParagraph({
+        Title = "Status:",
+        Content = "Work Auto mine,Auto Sell\nSecond line!"
+    })
