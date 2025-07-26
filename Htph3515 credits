@@ -54,56 +54,7 @@ do
     })
 
 -- delete
-Tabs.Main:AddButton({
-        Title = "Rusty Pickaxe",
-        Description = "Auto Mine",
-        Callback = function()
 
-        local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
-local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
-local Layer1 = workspace.Map["Layer 1"]
-local NPC = Layer1.Npcs["Rei ' The professer"]
-
-while task.wait(0.1) do
-    for _, stone in pairs(Layer1:GetChildren()) do
-        if stone:FindFirstChild("Amount") then
-            for _ = 1, 30 do
-                HitBox:FireServer(3, "Standard", false, "Rusty Pickaxe", 1)
-                task.wait(0.03)
-            end
-        end
-    end
-    if NPC and NPC:FindFirstChild("Rei") then
-        SellAll:FireServer(NPC.Rei, NPC.Rei.HumanoidRootPart.Dialogue)
-    end
-end
-    end)
-
-
-Tabs.Main:AddButton({
-        Title = "Iron Pickaxe",
-        Description = "Auto Mine",
-        Callback = function()
-
-local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
-local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
-local Layer1 = workspace.Map["Layer 1"]
-local NPC = Layer1.Npcs["Rei ' The professer"]
-
-while task.wait(0.1) do
-    for _, stone in pairs(Layer1:GetChildren()) do
-        if stone:FindFirstChild("Amount") then
-            for _ = 1, 30 do
-                HitBox:FireServer(5, "Standard", false, "Iron Pickaxe", 1)
-                task.wait(0.03)
-            end
-        end
-    end
-    if NPC and NPC:FindFirstChild("Rei") then
-        SellAll:FireServer(NPC.Rei, NPC.Rei.HumanoidRootPart.Dialogue)
-    end
-end
-  end)
 
 -- delete
 
