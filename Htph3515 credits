@@ -41,7 +41,7 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "leaf" }),
     Player = Window:AddTab({ Title = "Player", Icon = "skull" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "car" }),
-    Visual = Window:AddTab({ Title = "Visual", Icon = "settings" })
+    Visual = Window:AddTab({ Title = "Visual", Icon = "eye" })
 }
 
 local Options = Fluent.Options
@@ -190,3 +190,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(222.2737
 
 end})
 
+Tabs.Visual:AddParagraph({
+        Title = "Soon...",
+        Content = ""
+    })
