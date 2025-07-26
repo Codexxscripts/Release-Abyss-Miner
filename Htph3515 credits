@@ -38,8 +38,9 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "Mango" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "house" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "Apple" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "House" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "Portal" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -142,4 +143,22 @@ local function f(c)
 end
 f(lp.Character)
 lp.CharacterAdded:Connect(f)
+end})
+
+Tabs.Teleport:AddButton({
+        Title = "Shop #1",
+        Description = "",
+        Callback = function()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(31.472213745117188, 13.826899528503418, -17.74330711364746)
+
+end})
+
+Tabs.Teleport:AddButton({
+        Title = "Shop #2",
+        Description = "",
+        Callback = function()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Tabs.Teleport:AddButton(222.27378845214844, -156.92575073242188, -45.67597961425781)
+
 end})
