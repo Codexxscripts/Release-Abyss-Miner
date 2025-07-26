@@ -109,7 +109,7 @@ Tabs.Main:AddParagraph({
     })
 
 
-local Toggle = Tabs.Player:AddToggle("", {Title = "", Default = false })
+local Toggle = Tabs.Player:AddToggle("Speed Walk", {Title = "", Default = false })
 
     Toggle:OnChanged(function()
 speedEnabled = Value
@@ -120,3 +120,19 @@ speedEnabled = Value
         error("Humanoid not found.")
     end
 end)
+
+local Input = Tabs.Player:AddInput("Sent Speed", {
+        Title = "...",
+        Default = "Default",
+        Placeholder = "Placeholder",
+        Numeric = false, -- Only allows numbers
+        Finished = false, -- Only calls callback when you press enter
+        Callback = function(Value)
+            print("Input changed:", Value)
+        end
+    })
+
+    Input:OnChanged(function()
+        print("Input updated:", Input.Value)
+    end)
+end
