@@ -91,40 +91,14 @@ while task.wait(0.1) do
 end
 end})
 
-local Toggle = Tabs.Player:AddToggle("Speed Walk", {Title = "Speed Player", Default = false })
-
-    Toggle:OnChanged(function()
-speedEnabled = Value
-    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        humanoid.WalkSpeed = Value and customSpeed or 16
-    else
-        error("Humanoid not found.")
-    end
-end)
-
-
-local Input = Tabs.Player:AddInput("Speed Walk", {
-        Title = "Speed Walk",
-        Default = "Default",
-        Placeholder = "Placeholder",
-        Numeric = false, -- Only allows numbers
-        Finished = false, -- Only calls callback when you press enter
+local Slider = Tabs.Player:AddSlider("Walk Speed", {
+        Title = "Walk Speed",
+        Description = "Change speed Player",
+        Default = 16,
+        Min = 10,
+        Max = 500,
+        Rounding = 1,
         Callback = function(Value)
-
-
-    Input:OnChanged(function()
-        local speedValue = tonumber(Value)
-        if not speedValue then
-            error("error. Please enter a number to change the speed.")
+            
         end
-        customSpeed = speedValue
-
-        if speedEnabled then
-            local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-            if humanoid then
-                humanoid.WalkSpeed = customSpeed
-            end
-        end
-    end)
-end
+    })
