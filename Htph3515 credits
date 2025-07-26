@@ -159,6 +159,6 @@ Tabs.Teleport:AddButton({
         Description = "",
         Callback = function()
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Tabs.Teleport:AddButton(222.27378845214844, -156.92575073242188, -45.67597961425781)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(222.27378845214844, -156.92575073242188, -45.67597961425781)
 
 end})
