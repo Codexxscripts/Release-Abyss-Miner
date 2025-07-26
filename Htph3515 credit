@@ -36,3 +36,18 @@ local Window = Fluent:CreateWindow({
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.E -- Used when theres no MinimizeKeybind
 })
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "Mango" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+    Fluent:Notify({
+        Title = "Notification",
+        Content = "This is a notification",
+        SubContent = "SubContent", -- Optional
+        Duration = 5 -- Set to nil to make the notification not disappear
+    })
