@@ -96,9 +96,21 @@ local Slider = Tabs.Player:AddSlider("Walk Speed", {
         Description = "Change speed Player",
         Default = 16,
         Min = 16,
-        Max = 500,
+        Max = 1000,
         Rounding = 1,
         Callback = function(Value)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
         end
+    })
+
+local Slider = Tabs.Player:AddSlider("Jump Power", {
+        Title = "Jump Power",
+        Description = "Change jump Player",
+        Default = 150,
+        Min = 150,
+        Max = 1000,
+        Rounding = 1,
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+       end
     })
