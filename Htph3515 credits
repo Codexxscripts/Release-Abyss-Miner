@@ -54,26 +54,11 @@ do
     })
 
 -- delete
+Tabs.Main:AddButton({
+        Title = "Rusty Pickaxe",
+        Description = "Auto Mine",
+        Callback = function()
 
-local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
-        Title = "Dropdown",
-        Description = "You can select multiple values.",
-        Values = {"Rusty Pickaxe", "Iron Pickaxe"},
-        Multi = true,
-        Default = {"Rusty Pickaxe", "Iron Pickaxe"},
-    })
-
-    MultiDropdown:SetValue({
-        three = true,
-        five = true,
-        seven = false
-    })
-
-    MultiDropdown:OnChanged(function(Value)
-        local Values = {}
-        for Value, State in next, Value do
-            table.insert(Rusty Pickaxe, Value)
-        end
         local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
 local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
 local Layer1 = workspace.Map["Layer 1"]
@@ -95,11 +80,10 @@ end
     end)
 
 
-MultiDropdown:OnChanged(function(Value)
-        local Values = {}
-        for Value, State in next, Value do
-            table.insert(Iron Pickaxe, Value)
-        end
+Tabs.Main:AddButton({
+        Title = "Iron Pickaxe",
+        Description = "Auto Mine",
+        Callback = function()
 
 local HitBox = game:GetService("ReplicatedStorage").RemoteEvent.HitBox
 local SellAll = game:GetService("ReplicatedStorage").RemoteEvent.SellAllInventory
