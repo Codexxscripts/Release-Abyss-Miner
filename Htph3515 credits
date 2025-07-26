@@ -41,7 +41,7 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "leaf" }),
     Player = Window:AddTab({ Title = "Player", Icon = "skull" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "car" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    Visual = Window:AddTab({ Title = "Visual", Icon = "settings" })
 }
 
 local Options = Fluent.Options
