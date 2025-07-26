@@ -25,6 +25,10 @@ task.spawn(function()
         end)
     end
 end)
+
+game:GetService("CoreGui").RobloxGui["CoreScripts/NetworkPause"]:Destroy()
+wait(0.3)
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 local Window = Fluent:CreateWindow({
