@@ -117,11 +117,6 @@ while task.wait(0.1) do
 end
 end})
 
-Tabs.Main:AddParagraph({
-        Title = "Work Auto mine,Auto Sell\nSecond line!",
-        Content = ""
-    })
-
 
 local Slider = Tabs.Player:AddSlider("Walk Speed", {
         Title = "Walk Speed",
