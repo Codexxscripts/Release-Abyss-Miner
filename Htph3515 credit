@@ -99,6 +99,6 @@ end
 local Toggle = Tabs.Main:AddToggle("Auto Sell", {Title = "This is Toggle", Default = true })
 
     Toggle:OnChanged(function()
-
+print("Work Script")
 end)
 
