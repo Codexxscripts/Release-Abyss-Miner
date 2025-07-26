@@ -172,6 +172,14 @@ f(lp.Character)
 lp.CharacterAdded:Connect(f)
 end})
 
+Tabs.Player:AddButton({
+        Title = "Fly",
+        Description = "",
+        Callback = function()
+loadstring(game:HttpGet(('https://pastefy.app/M0N30XXG/raw'),true))()
+
+end})
+
 Tabs.Teleport:AddButton({
         Title = "Shop #1",
         Description = "",
